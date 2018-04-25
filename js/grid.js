@@ -321,7 +321,7 @@ var Grid = (function() {
 			// create Preview structure:
 			this.$title = $( '<h4></h4>' );
 			this.$description = $( '<p></p>' );
-			this.$href = $( '<a href="#" class="btn btn-theme">External link</a>' );
+			this.$href = $( '<a href="" class="btn btn-theme"></a>' );
 			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
@@ -357,14 +357,17 @@ var Grid = (function() {
 			var $itemEl = this.$item.children( 'a' ),
 				eldata = {
 					href : $itemEl.attr( 'href' ),
+					myhref:$itemEl.data( 'href' ),
 					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
+					link : $itemEl.data('link'),
 					description : $itemEl.data( 'description' )
 				};
 
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
-			this.$href.attr( 'href', eldata.href );
+			this.$href.attr(eldata.myhref);
+			this.$href.html( eldata.link );
 
 			var self = this;
 			
