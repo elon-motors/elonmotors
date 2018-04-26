@@ -321,7 +321,6 @@ var Grid = (function() {
 			// create Preview structure:
 			this.$title = $( '<h4></h4>' );
 			this.$description = $( '<p></p>' );
-			//
 			this.$href = $( '<a href="https://goo.gl/forms/6wQuFSpeW0Ukw9yk1" class="btn btn-theme"></a>' );
 			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
 			this.$loading = $( '<div class="og-loading"></div>' );
